@@ -9,15 +9,23 @@ c = [-0.0165, -0.015, 0.0155, 0.0424, 0.0155, -0.0750, -0.1568, -0.1061, 0.1568,
 q = list(range(0, coeff_number))
 
 
-def coefficient_quantization():
+def coefficient_quantization(printToCode):
     count = 0
     for coeff in c:
         q[count] = q[coeff_number - 1 - count] = math.floor(coeff / LSB)
         count += 1
-    file = open("coefficients.txt", "w")
-    for coeff in q:
-        file.write(str(coeff) + "\n")
-    file.close()
+    if printToCode:
+        file = open("coefToCode.txt", "w")
+        for i in range(0, 12):
+            if i < 11:
+                file.write("to_signed(" + str(q[i]) + ", 16),\n")
+            else:
+                file.write("to_signed(" + str(q[i]) + ", 16)")
+    else:
+        file = open("coefficients.txt", "w")
+        for coeff in q:
+            file.write(str(coeff) + "\n")
+        file.close()
 
 
 def quantization_error():
@@ -31,5 +39,5 @@ def quantization_error():
 
 
 if __name__ == "__main__":
-    coefficient_quantization()
+    coefficient_quantization(True)
     print(abs(quantization_error()))
