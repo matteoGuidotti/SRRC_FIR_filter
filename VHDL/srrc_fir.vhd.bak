@@ -19,7 +19,7 @@ entity srrc_fir is
 		clk	: in std_logic;	-- clock signal
 		rst	: in std_logic;	-- reset signal
 		x	: in std_logic_vector(15 downto 0);	-- Input signal
-		y	: out std_logic_vector(15 downto 0)	-- Output signal
+		y	: in std_logic_vector(15 downto 0)	-- Output signal
 	);
 end srrc_fir;
 
@@ -28,7 +28,7 @@ architecture srrc_fir_beh of srrc_fir is
 
 	-- Coefficients definition (thanks to simmetry I can store only half of them)
 	type coefficient is array (0 to 11) of signed (15 downto 0);
-	constant c: coefficient := (
+	constant c: coeff := (
 		to_signed(-271, 16),
 		to_signed(-246, 16),
 		to_signed(253, 16),
@@ -68,7 +68,7 @@ architecture srrc_fir_beh of srrc_fir is
 
 	-- Flip-Flop component declaration
 	component dff_n is
-		generic(N: integer:= 8);
+		generic(N: integer:= 8)
 		port(
 			d	: in std_logic_vector(N-1 downto 0);
 			clk	: in std_logic;
@@ -82,49 +82,48 @@ begin
 	-- Flip-flops lines mapping
 	DFF_MAP: for i in 0 to 21 generate
 		-- first flip-flop
-		FIRST_DFF: if i = 0 generate
+		FIRST: if i = 0 generate
 			DFF_0: dff_n 
-				generic map(N => 16) 
+				generic map(N => 16)
 				port map(d => x, clk => clk, rst => rst, q => dff_out(0));
-		end generate FIRST_DFF;
+		end generate FIRST;
 
 		-- generic flip-flop
-		GENERIC_DFF: if i > 0 generate
-			DFF_i: dff_n 
+		GENERIC: if i > 0 generate
+			DFF_i: dff_n
 				generic map(N => 16)
 				port map(d => dff_out(i-1), clk => clk, rst => rst, q => dff_out(i));
-		end generate GENERIC_DFF;
-
+		end generate GENERIC;
 	end generate DFF_MAP;
 
 	-- Output Flip-Flop
 	OUTPUT_DFF_MAP: dff_n
-				generic map(N => 16)
-				port map(d => result(32 downto 17), clk => clk, rst => rst, q => y);
+	generic map(N => 16)
+	port map(d => result(32 downto 17), clk => clk, rst => rst, q => y);
 
 	-- Summation stage: Sums between the couples of values that must be multiplied with the same coefficient
 	-- This consent to use half of the multiplier, that are expensive
 	SUM_STAGE: for i in 0 to 10 generate
 		-- the first sum is between the input of the filter and the output value of the last flip-flop 
-		FIRST_SUM: if i = 0 generate
+		FIRST: if i = 0 generate
 			sum_out(i) <= std_logic_vector(resize(signed(x), 17) + resize(signed(dff_out(21)), 17));
-		end generate FIRST_SUM;
+		end generate FIRST;
 
-		GENERIC_SUM: if i > 0 generate
+		GENERIC: if i > 0 generate
 			sum_out(i) <= std_logic_vector(resize(signed(dff_out(i - 1)), 17) + resize(signed(dff_out(21 - i)), 17));
-		end generate GENERIC_SUM;
+		end generate GENERIC;
 	end generate SUM_STAGE;
 
 	-- Multiplication stage: results of each sum must be multiplied by the respective coefficient
 	-- The value at flip-flop with index i = 11 has not been summed to anyone, it must be only multiplied with its coefficient 
 	MUL_STAGE: for i in 0 to 11 generate
-		GENERIC_MUL: if i < 11 generate
-			mul_out(i) <= std_logic_vector(signed(sum_out(i)) * c(i));
-		end generate GENERIC_MUL;
+		GENERIC: if i < 11 generate
+			mul_out(i) <= std_logic_vector(signed(add_out(i)) * c(i));
+		end generate GENERIC;
 
-		LAST_MUL: if i = 11 generate
+		LAST: if i = 11 generate
 			mul_out(11) <= std_logic_vector(resize(signed(dff_out(10)), 17) * c(11));
-		end generate LAST_MUL;
+		end generate LAST;
 	end generate MUL_STAGE;
 
 	-- Final sum
@@ -136,4 +135,4 @@ begin
 		signed(mul_out(8)) + signed(mul_out(9)) +
 		signed(mul_out(10)) + signed(mul_out(11)));
 
-end srrc_fir_beh;
+end srrc_fir_beh

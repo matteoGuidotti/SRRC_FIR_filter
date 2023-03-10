@@ -29,4 +29,4 @@ begin
 			q <= d;
 		end if;
 	end process;
-end dff_n_beh;
+end dff_n_beh
