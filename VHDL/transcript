@@ -1,0 +1,68 @@
+# Compile of dff_n.vhd was successful.
+# Compile of srrc_fir.vhd was successful.
+# Compile of srrc_fir_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.srrc_fir_tb
+# vsim -gui work.srrc_fir_tb 
+# Start time: 10:51:34 on Mar 14,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.srrc_fir_tb(testbench)
+# Loading ieee.numeric_std(body)
+# Loading work.srrc_fir(srrc_fir_beh)
+# Loading work.dff_n(dff_n_beh)
+add wave -position end  sim:/srrc_fir_tb/clk_tb
+add wave -position end  sim:/srrc_fir_tb/rst_tb
+add wave -position end  sim:/srrc_fir_tb/x_tb
+add wave -position end  sim:/srrc_fir_tb/y_tb
+add wave -position end  sim:/srrc_fir_tb/stop_simulation
+run -all
+# Compile of dff_n.vhd was successful.
+# Compile of srrc_fir.vhd was successful.
+# Compile of srrc_fir_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.srrc_fir_tb
+# End time: 11:03:05 on Mar 14,2023, Elapsed time: 0:11:31
+# Errors: 0, Warnings: 3
+# vsim -gui work.srrc_fir_tb 
+# Start time: 11:03:05 on Mar 14,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.srrc_fir_tb(testbench)
+# Loading ieee.numeric_std(body)
+# Loading work.srrc_fir(srrc_fir_beh)
+# Loading work.dff_n(dff_n_beh)
+add wave -position end  sim:/srrc_fir_tb/clk_tb
+add wave -position end  sim:/srrc_fir_tb/rst_tb
+add wave -position end  sim:/srrc_fir_tb/x_tb
+add wave -position end  sim:/srrc_fir_tb/y_tb
+add wave -position end  sim:/srrc_fir_tb/stop_simulation
+run -all
+add wave -position end  /srrc_fir_tb/srrc_fir_dut/dff_out
+run -all
+# Compile of dff_n.vhd was successful.
+# Compile of srrc_fir.vhd was successful.
+# Compile of srrc_fir_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.srrc_fir_tb
+# End time: 11:07:49 on Mar 14,2023, Elapsed time: 0:04:44
+# Errors: 0, Warnings: 2
+# vsim -gui work.srrc_fir_tb 
+# Start time: 11:07:49 on Mar 14,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.srrc_fir_tb(testbench)
+# Loading ieee.numeric_std(body)
+# Loading work.srrc_fir(srrc_fir_beh)
+# Loading work.dff_n(dff_n_beh)
+add wave -position end  sim:/srrc_fir_tb/clk_tb
+add wave -position end  sim:/srrc_fir_tb/rst_tb
+add wave -position end  sim:/srrc_fir_tb/x_tb
+add wave -position end  sim:/srrc_fir_tb/y_tb
+add wave -position end  /srrc_fir_tb/srrc_fir_dut/dff_out
+run -all
+# End time: 13:00:24 on Mar 14,2023, Elapsed time: 1:52:35
+# Errors: 0, Warnings: 1

@@ -23,7 +23,7 @@ architecture dff_n_beh of dff_n is
 begin
 	proc: process(clk, rst)
 	begin
-		if(rst = '0') then
+		if(rst = '1') then
 			q <= (others => '0');
 		elsif(rising_edge(clk)) then
 			q <= d;

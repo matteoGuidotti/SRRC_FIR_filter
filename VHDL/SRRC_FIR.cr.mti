@@ -1,5 +1,5 @@
 {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -7,7 +7,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling architecture dff_n_beh of dff_n
 
 } {} {}} {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -16,7 +16,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling architecture srrc_fir_beh of srrc_fir
 
 } {} {}} {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164

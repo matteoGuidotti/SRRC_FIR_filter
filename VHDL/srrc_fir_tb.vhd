@@ -55,7 +55,7 @@ begin
 		if(rising_edge(clk_tb)) then
 			case(clock_cycle) is
 				when 1	=> rst_tb <= '0';
-				when 2 	=> x_tb <= (15 downto 1 => '0') & '1';
+				when 2 	=> x_tb <= (15 downto 1 => '0') & '0';
 				when (TestLen - 1) => stop_simulation <= '0';
 				when others => null;
 			end case;

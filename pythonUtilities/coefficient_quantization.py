@@ -13,6 +13,9 @@ c = [-0.0165, -0.015, 0.0155, 0.0424, 0.0155, -0.0750, -0.1568, -0.1061, 0.1568,
 q = list(range(0, coeff_number))
 
 
+# printToCode is a boolean
+# if it's true the result is printed to a file in order to copy and past the content to the vhd file code
+# if it's false the coefficients are printed as they are in a txt file
 def coefficient_quantization(printToCode):
     count = 0
     for coeff in c:
@@ -32,6 +35,7 @@ def coefficient_quantization(printToCode):
         file.close()
 
 
+# compute and return the quantization error for the coefficients
 def quantization_error():
     sum = 0
     for i in range(0, coeff_number):
