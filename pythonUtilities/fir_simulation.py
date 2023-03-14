@@ -21,7 +21,7 @@ period = 2*np.pi
 
 # shift the position of each signal sample to the next one
 def shift_positions(values):
-    for i in range(0, 23):
+    for i in range(22, 0, -1):
         values[i] = values[i - 1]
 
 
