@@ -52,7 +52,8 @@ def quantized_signal(print_to_code):
     # in case print_to_code is true, the values will be encoded in a vhd case statement starting from the "when 2" line
     case_count = 2
     for signal in signal_values:
-        quantized_value = math.floor(signal / LSB)
+        print(float(signal) / LSB)
+        quantized_value = math.floor(float(signal) / LSB)
         q.append(quantized_value)
         # print quantized_value where I need to print it
         if print_to_code:
@@ -69,4 +70,4 @@ def quantized_signal(print_to_code):
 
 
 if __name__ == "__main__":
-    quantized_signal(True)
+    quantized_signal(False)

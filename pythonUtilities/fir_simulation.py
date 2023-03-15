@@ -36,17 +36,20 @@ def compute_fir(values):
 if __name__ == "__main__":
     # list of 23 values that are used to compute the result
     signal_values = []
-    countOutput = 0
     # reset simulation
     for i in range(0, 23):
         signal_values.append(0)
     # get the sin signal values
     sin_values = sg.signal_generator(period, num_of_frequencies)
-    file = open("output.txt", "w")
+    file = open("fir_simulation_output.txt", "w")
+    old_output = 0
     for signal in sin_values:
         shift_positions(signal_values)
         signal_values[0] = signal
         output = compute_fir(signal_values)
-        file.write(str(countOutput) + ": " + str(output) + "\n")
-        countOutput += 1
+        # given the fact that the output is delayed, I'll print them in the same way to make the comparison easier
+        # Input:Output at the same clock
+        file.write(str(signal) + ":" + str(old_output) + "\n")
+        old_output = output
+    file.write(str(old_output))
     file.close()

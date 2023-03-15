@@ -13,7 +13,7 @@ Edff_n
 Z1 w1678788163
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 18
+!i122 27
 R0
 Z4 8C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd
 Z5 FC:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd
@@ -23,39 +23,39 @@ VaLWJ3j<CC7`lISWR0<Gh?2
 !s100 9e4^l@Zb^a4[G_coW9;1W2
 Z6 OV;C;2020.1;71
 32
-Z7 !s110 1678811774
+!s110 1678875692
 !i10b 1
-Z8 !s108 1678811774.000000
-Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd|
-Z10 !s107 C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd|
+Z7 !s108 1678875692.000000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd|
+Z9 !s107 C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd|
 !i113 1
-Z11 o-work work -2002 -explicit
-Z12 tExplicit 1 CvgOpt 0
+Z10 o-work work -2002 -explicit
+Z11 tExplicit 1 CvgOpt 0
 Adff_n_beh
 R2
 R3
 DEx4 work 5 dff_n 0 22 aLWJ3j<CC7`lISWR0<Gh?2
-!i122 18
+!i122 27
 l23
 L22 11
 VY?LQL[5n5`Ji557h`dYOG1
 !s100 59bEO<8oJm5?aobjz4C?N0
 R6
 32
-R7
+Z12 !s110 1678875693
 !i10b 1
+R7
 R8
 R9
-R10
 !i113 1
+R10
 R11
-R12
 Esrrc_fir
 Z13 w1678443310
 Z14 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R2
 R3
-!i122 19
+!i122 28
 R0
 Z15 8C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd
 Z16 FC:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd
@@ -65,72 +65,72 @@ V<Zj:5LWCW4MeYj1Z25Ymo0
 !s100 N@48I1C1GM=?J7o`bf<Y>2
 R6
 32
-R7
-!i10b 1
-R8
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd|
-Z18 !s107 C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd|
-!i113 1
-R11
 R12
+!i10b 1
+Z17 !s108 1678875693.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd|
+Z19 !s107 C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd|
+!i113 1
+R10
+R11
 Asrrc_fir_beh
 R14
 R2
 R3
 DEx4 work 8 srrc_fir 0 22 <Zj:5LWCW4MeYj1Z25Ymo0
-!i122 19
+!i122 28
 l80
 L27 113
 VR008>:Lc7S7>95=IInViH1
 !s100 @F;7QUeIO2RoMK0VbYFUA1
 R6
 32
-R7
+R12
 !i10b 1
-R8
 R17
 R18
+R19
 !i113 1
+R10
 R11
-R12
 Esrrc_fir_tb
-Z19 w1678811769
+Z20 w1678874407
 R2
 R3
-!i122 20
+!i122 29
 R0
-Z20 8C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd
-Z21 FC:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd
+Z21 8C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd
+Z22 FC:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd
 l0
 L15 1
 Vo[7YlgZHaNS[UGZmW]]@11
 !s100 V]j`f^=>ARaW1KA1fDQJ31
 R6
 32
-R7
-!i10b 1
-R8
-Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd|
-Z23 !s107 C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd|
-!i113 1
-R11
 R12
+!i10b 1
+R17
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd|
+Z24 !s107 C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_tb.vhd|
+!i113 1
+R10
+R11
 Atestbench
 R2
 R3
-Z24 DEx4 work 11 srrc_fir_tb 0 22 o[7YlgZHaNS[UGZmW]]@11
-!i122 20
+Z25 DEx4 work 11 srrc_fir_tb 0 22 o[7YlgZHaNS[UGZmW]]@11
+!i122 29
 l40
-Z25 L18 148
-Vob5B4IVm<3:LYaWgBG]Z;0
-!s100 [H>zUYVU1RQQ`MD5Q[fRM0
+Z26 L18 149
+VEYJo<:kOD8Ti66699TfLH2
+!s100 MLUkUi`7Q4XbA;gF[83eS2
 R6
 32
-R7
-!i10b 1
-R8
-R22
-R23
-!i113 1
-R11
 R12
+!i10b 1
+R17
+R23
+R24
+!i113 1
+R10
+R11

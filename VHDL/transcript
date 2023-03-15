@@ -4,30 +4,7 @@
 # 3 compiles, 0 failed with no errors.
 vsim -gui work.srrc_fir_tb
 # vsim -gui work.srrc_fir_tb 
-# Start time: 17:33:40 on Mar 14,2023
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.srrc_fir_tb(testbench)
-# Loading ieee.numeric_std(body)
-# Loading work.srrc_fir(srrc_fir_beh)
-# Loading work.dff_n(dff_n_beh)
-add wave -position end  sim:/srrc_fir_tb/clk_tb
-add wave -position end  sim:/srrc_fir_tb/rst_tb
-add wave -position end  sim:/srrc_fir_tb/x_tb
-add wave -position end  sim:/srrc_fir_tb/y_tb
-add wave -position end  sim:/srrc_fir_tb/stop_simulation
-add wave -position end  /srrc_fir_tb/srrc_fir_dut/dff_out
-run -all
-# Compile of dff_n.vhd was successful.
-# Compile of srrc_fir.vhd was successful.
-# Compile of srrc_fir_tb.vhd was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -gui work.srrc_fir_tb
-# End time: 17:36:24 on Mar 14,2023, Elapsed time: 0:02:44
-# Errors: 0, Warnings: 3
-# vsim -gui work.srrc_fir_tb 
-# Start time: 17:36:24 on Mar 14,2023
+# Start time: 10:32:55 on Mar 15,2023
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -41,42 +18,91 @@ sim:/srrc_fir_tb/rst_tb \
 sim:/srrc_fir_tb/x_tb \
 sim:/srrc_fir_tb/y_tb \
 sim:/srrc_fir_tb/stop_simulation
-add wave -position end  /srrc_fir_tb/srrc_fir_dut/dff_out
 run -all
-add dataflow  \
-sim:/srrc_fir_tb/x_tb
-# WARNING: No extended dataflow license exists
-run -next
-# Nothing left to do.
-# 
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+write list -window .main_pane.list C:/Users/matte/Desktop/list.lst
+# Compile of dff_n.vhd was successful.
+# Compile of srrc_fir.vhd was successful.
+# Compile of srrc_fir_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.srrc_fir_tb
+# End time: 10:56:12 on Mar 15,2023, Elapsed time: 0:23:17
+# Errors: 0, Warnings: 3
+# vsim -gui work.srrc_fir_tb 
+# Start time: 10:56:12 on Mar 15,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.srrc_fir_tb(testbench)
+# Loading ieee.numeric_std(body)
+# Loading work.srrc_fir(srrc_fir_beh)
+# Loading work.dff_n(dff_n_beh)
+add wave -position insertpoint  \
+sim:/srrc_fir_tb/clk_tb \
+sim:/srrc_fir_tb/rst_tb \
+sim:/srrc_fir_tb/x_tb \
+sim:/srrc_fir_tb/y_tb \
+sim:/srrc_fir_tb/stop_simulation
 run -all
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+add wave -position end  sim:/srrc_fir_tb/srrc_fir_dut/result
 restart -f
-step -current
-# ** UI-Msg: (vsim-12081) The specified scope, sim:/srrc_fir_tb, is not a process or thread.
-# 
-run -next
+run -all
 # GetModuleFileName: Impossibile trovare il modulo specificato.
 # 
 # 
-run -continue
-run -continue
-run 2
-run 2
-run 10
-run 100
+add list \
+sim:/srrc_fir_tb/srrc_fir_dut/result 
+restart -f
+# Compile of dff_n.vhd was successful.
+# Compile of srrc_fir.vhd was successful.
+# Compile of srrc_fir_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.srrc_fir_tb
+# End time: 11:21:45 on Mar 15,2023, Elapsed time: 0:25:33
+# Errors: 0, Warnings: 2
+# vsim -gui work.srrc_fir_tb 
+# Start time: 11:21:45 on Mar 15,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.srrc_fir_tb(testbench)
+# Loading ieee.numeric_std(body)
+# Loading work.srrc_fir(srrc_fir_beh)
+# Loading work.dff_n(dff_n_beh)
+add wave -position insertpoint  \
+sim:/srrc_fir_tb/clk_tb \
+sim:/srrc_fir_tb/rst_tb \
+sim:/srrc_fir_tb/x_tb \
+sim:/srrc_fir_tb/y_tb \
+sim:/srrc_fir_tb/stop_simulation
+add list \
+sim:/srrc_fir_tb/x_tb \
+sim:/srrc_fir_tb/y_tb 
+run -all
+write list -window .main_pane.list.interior.cs.body -events C:/Users/matte/Desktop/list.lst
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+add list \
+sim:/srrc_fir_tb/y_tb 
+add list \
+sim:/srrc_fir_tb/y_tb 
+add wave -position insertpoint /srrc_fir_tb/y_tb
 add list  \
 sim:/srrc_fir_tb/y_tb
-run -all
-write list -window .main_pane.list.interior.cs.body C:/Users/matte/Desktop/list.lst
-write list -window .main_pane.list.interior.cs.body C:/Users/matte/Desktop/list.txt
-write format list -window .main_pane.list.interior.cs.body C:/Users/matte/Desktop/lista.txt
-write list -window .main_pane.list.interior.cs.body -events C:/Users/matte/Desktop/lista.txt
-write tssi -window .main_pane.list.interior.cs.body C:/Users/matte/Desktop/lista2.txt
-# Error: Invalid signal value "0000" on signal /srrc_fir_tb/x_tb.
-# Error: Invalid signal value "0000" on signal /srrc_fir_tb/y_tb.
-# 
-# End time: 18:12:28 on Mar 14,2023, Elapsed time: 0:36:04
-# Errors: 0, Warnings: 2
+add list  \
+sim:/srrc_fir_tb/x_tb \
+sim:/srrc_fir_tb/y_tb
+add list  \
+sim:/srrc_fir_tb/y_tb
+add list  \
+sim:/srrc_fir_tb/x_tb
+add log  \
+sim:/srrc_fir_tb/x_tb
+write list -window .main_pane.list -events C:/Users/matte/Desktop/list.lst
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+write list -window .main_pane.list -events C:/Users/matte/Desktop/simulation_y.lst
+add list  \
+sim:/srrc_fir_tb/x_tb
+write list -window .main_pane.list -events C:/Users/matte/Desktop/simulation_input.lst
+# End time: 12:50:59 on Mar 15,2023, Elapsed time: 1:29:14
+# Errors: 0, Warnings: 1
