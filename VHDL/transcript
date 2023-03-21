@@ -4,7 +4,7 @@
 # 3 compiles, 0 failed with no errors.
 vsim -gui work.srrc_fir_tb
 # vsim -gui work.srrc_fir_tb 
-# Start time: 10:32:55 on Mar 15,2023
+# Start time: 11:04:44 on Mar 21,2023
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -19,90 +19,45 @@ sim:/srrc_fir_tb/x_tb \
 sim:/srrc_fir_tb/y_tb \
 sim:/srrc_fir_tb/stop_simulation
 run -all
-write list -window .main_pane.list C:/Users/matte/Desktop/list.lst
+add list \
+sim:/srrc_fir_tb/x_tb 
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/simulation_input_saturation.lst}
+add list  \
+sim:/srrc_fir_tb/y_tb
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/simulation_output_saturation.lst}
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/simulation_output_saturation.lst}
+add list  \
+sim:/srrc_fir_tb/x_tb
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/simulation_input_saturation.lst}
 # Compile of dff_n.vhd was successful.
 # Compile of srrc_fir.vhd was successful.
 # Compile of srrc_fir_tb.vhd was successful.
 # 3 compiles, 0 failed with no errors.
-vsim -gui work.srrc_fir_tb
-# End time: 10:56:12 on Mar 15,2023, Elapsed time: 0:23:17
-# Errors: 0, Warnings: 3
-# vsim -gui work.srrc_fir_tb 
-# Start time: 10:56:12 on Mar 15,2023
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
+# Load canceled
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.srrc_fir_tb(testbench)
-# Loading ieee.numeric_std(body)
 # Loading work.srrc_fir(srrc_fir_beh)
 # Loading work.dff_n(dff_n_beh)
-add wave -position insertpoint  \
-sim:/srrc_fir_tb/clk_tb \
-sim:/srrc_fir_tb/rst_tb \
-sim:/srrc_fir_tb/x_tb \
-sim:/srrc_fir_tb/y_tb \
-sim:/srrc_fir_tb/stop_simulation
-run -all
-add wave -position end  sim:/srrc_fir_tb/srrc_fir_dut/result
-restart -f
 run -all
 # GetModuleFileName: Impossibile trovare il modulo specificato.
 # 
 # 
-add list \
-sim:/srrc_fir_tb/srrc_fir_dut/result 
-restart -f
+add list  \
+sim:/srrc_fir_tb/y_tb
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/simulation_output.lst}
 # Compile of dff_n.vhd was successful.
 # Compile of srrc_fir.vhd was successful.
 # Compile of srrc_fir_tb.vhd was successful.
 # 3 compiles, 0 failed with no errors.
-vsim -gui work.srrc_fir_tb
-# End time: 11:21:45 on Mar 15,2023, Elapsed time: 0:25:33
-# Errors: 0, Warnings: 2
-# vsim -gui work.srrc_fir_tb 
-# Start time: 11:21:45 on Mar 15,2023
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.srrc_fir_tb(testbench)
-# Loading ieee.numeric_std(body)
 # Loading work.srrc_fir(srrc_fir_beh)
 # Loading work.dff_n(dff_n_beh)
-add wave -position insertpoint  \
-sim:/srrc_fir_tb/clk_tb \
-sim:/srrc_fir_tb/rst_tb \
-sim:/srrc_fir_tb/x_tb \
-sim:/srrc_fir_tb/y_tb \
-sim:/srrc_fir_tb/stop_simulation
-add list \
-sim:/srrc_fir_tb/x_tb \
-sim:/srrc_fir_tb/y_tb 
 run -all
-write list -window .main_pane.list.interior.cs.body -events C:/Users/matte/Desktop/list.lst
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-add list \
-sim:/srrc_fir_tb/y_tb 
-add list \
-sim:/srrc_fir_tb/y_tb 
-add wave -position insertpoint /srrc_fir_tb/y_tb
-add list  \
-sim:/srrc_fir_tb/y_tb
-add list  \
-sim:/srrc_fir_tb/x_tb \
-sim:/srrc_fir_tb/y_tb
-add list  \
-sim:/srrc_fir_tb/y_tb
-add list  \
-sim:/srrc_fir_tb/x_tb
-add log  \
-sim:/srrc_fir_tb/x_tb
-write list -window .main_pane.list -events C:/Users/matte/Desktop/list.lst
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-write list -window .main_pane.list -events C:/Users/matte/Desktop/simulation_y.lst
-add list  \
-sim:/srrc_fir_tb/x_tb
-write list -window .main_pane.list -events C:/Users/matte/Desktop/simulation_input.lst
-# End time: 12:50:59 on Mar 15,2023, Elapsed time: 1:29:14
-# Errors: 0, Warnings: 1
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/simulation_output_saturation2.lst}
+write list -window .main_pane.list -events {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/pythonUtilities/hw_sim_results/hw_simulation_output_saturation2.lst}

@@ -32,7 +32,7 @@ architecture testbench of srrc_fir_tb is
 
 	-- signals
 	signal clk_tb			: std_logic := '0';	-- clock signal (initialized to '0')
-	signal rst_tb			: std_logic := '1';	-- reset signal (initialized to '1')
+	signal rst_tb			: std_logic := '0';	-- reset signal (initialized to '0')
 	signal x_tb				: std_logic_vector(15 downto 0) := (others => '0'); -- input signal 
 	signal y_tb				: std_logic_vector(15 downto 0) := (others => '0'); -- output signal
 	signal stop_simulation 	: std_logic := '1'; -- signal to stop the simulation. It is stopped when stop_simulation goes to '0'
@@ -55,7 +55,7 @@ begin
 		if(rising_edge(clk_tb)) then
 			case(clock_cycle) is
 				-- this case statement model the input as it is taken from a sin waveform signal with period 2pi
-				when 1	=> rst_tb <= '0';
+				when 1	=> rst_tb <= '1';
 				when 2 	=> x_tb <= "0000000000000000";
 				when 3 	=> x_tb <= "0000100000011110";
 				when 4 	=> x_tb <= "0001000000110100";

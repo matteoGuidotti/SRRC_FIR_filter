@@ -29,27 +29,19 @@ architecture srrc_fir_beh of srrc_fir is
 	-- Coefficients definition (thanks to simmetry I can store only half of them)
 	type coefficient is array (0 to 11) of signed (15 downto 0);
 	constant c: coefficient := (
-		to_signed(-271, 16),
-		to_signed(-246, 16),
-		to_signed(253, 16),
-		to_signed(694, 16),
-		to_signed(253, 16),
-		to_signed(-1229, 16),
-		to_signed(-2570, 16),
-		to_signed(-1739, 16),
-		to_signed(2569, 16),
-		to_signed(9479, 16),
-		to_signed(15966, 16),
-		to_signed(18622, 16)
+		to_signed(-271, 16),	-- (-0.0165)
+		to_signed(-246, 16),	-- (-0.015)
+		to_signed(253, 16),		-- (0.0155)
+		to_signed(694, 16),		-- (0.0424)
+		to_signed(253, 16),		-- (0.0155)
+		to_signed(-1229, 16),	-- (-0.075)
+		to_signed(-2570, 16),	-- (-0.1568)
+		to_signed(-1739, 16),	-- (-0.1061)
+		to_signed(2569, 16),	-- (0.1568)
+		to_signed(9479, 16),	-- (0.5786)
+		to_signed(15966, 16),	-- (0.9745)
+		to_signed(18622, 16)	-- (1.1366)
 	);
-
-	-- Definition of flip-flop input lines
-	--type dff_input_vector is array (0 to 21) of std_logic_vector(15 downto 0);
-	--signal dff_in: dff_input_vector;
-
-	-- Definition of flip-flop output lines
-	--type dff_output_vector is array (0 to 21) of std_logic_vector(15 downto 0);
-	--signal dff_out: dff_output_vector;
 
 	-- Definition of output lines of flip-flop
 	type dff_output_vector is array (0 to 21) of std_logic_vector(15 downto 0);
@@ -100,7 +92,8 @@ begin
 	-- Output Flip-Flop
 	OUTPUT_DFF_MAP: dff_n
 				generic map(N => 16)
-				port map(d => result(32 downto 17), clk => clk, rst => rst, q => y);
+				port map(d => result(31 downto 16), clk => clk, rst => rst, q => y); 	-- truncation discarding 16 bits and saturation discarding the most significant bit
+				--port map(d => result(32 downto 17), clk => clk, rst => rst, q => y);	-- only truncation discarding 17 bits
 
 	-- Summation stage: Sums between the couples of values that must be multiplied with the same coefficient
 	-- This consent to use half of the multiplier, that are expensive
@@ -114,7 +107,7 @@ begin
 			sum_out(i) <= std_logic_vector(resize(signed(dff_out(i - 1)), 17) + resize(signed(dff_out(21 - i)), 17));
 		end generate GENERIC_SUM;
 	end generate SUM_STAGE;
-
+	
 	-- Multiplication stage: results of each sum must be multiplied by the respective coefficient
 	-- The value at flip-flop with index i = 11 has not been summed to anyone, it must be only multiplied with its coefficient 
 	MUL_STAGE: for i in 0 to 11 generate

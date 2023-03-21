@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------------------------------------------------
-# simulation of the calculus that the SRRC FIR must compute
+# Simulation of the calculus that the SRRC FIR must compute
 # Order of the filter: 22
 # Roll-Off factor: 0.5
 # Samples per symbol: 4
@@ -41,15 +41,17 @@ if __name__ == "__main__":
         signal_values.append(0)
     # get the sin signal values
     sin_values = sg.signal_generator(period, num_of_frequencies)
-    file = open("fir_simulation_output.txt", "w")
+    file = open("hw_sim_results/fir_sw_simulation_output.txt", "w")
     old_output = 0
     for signal in sin_values:
         shift_positions(signal_values)
         signal_values[0] = signal
         output = compute_fir(signal_values)
-        # given the fact that the output is delayed, I'll print them in the same way to make the comparison easier
+        # given the fact that in the hw simulation the output is delayed with the respect of the input, I'll print
+        # them in the same way to make the comparison easier
         # Input:Output at the same clock
         file.write(str(signal) + ":" + str(old_output) + "\n")
         old_output = output
+    # last output has not an associated input, given that it is delayed
     file.write(str(old_output))
     file.close()

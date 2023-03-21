@@ -1,5 +1,6 @@
 ----------------------------------------------------------------------------------------------------------------------------
 -- Parallel D Flip-Flop with generic number of bits for input/output (N)
+-- Synchronous reset
 ----------------------------------------------------------------------------------------------------------------------------
 -- Author: Matteo Guidotti
 ----------------------------------------------------------------------------------------------------------------------------
@@ -23,10 +24,12 @@ architecture dff_n_beh of dff_n is
 begin
 	proc: process(clk, rst)
 	begin
-		if(rst = '1') then
-			q <= (others => '0');
-		elsif(rising_edge(clk)) then
-			q <= d;
+		if(rising_edge(clk)) then
+			if(rst = '0') then
+				q <= (others => '0');
+			else
+				q <= d;
+			end if;
 		end if;
 	end process;
 end dff_n_beh;

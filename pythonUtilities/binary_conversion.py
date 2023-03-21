@@ -1,4 +1,8 @@
-# library to convert values from signed to two's complement binary on 16 bits and viceversa
+# ----------------------------------------------------------------------------------------------------------------------
+# Function to convert values from signed decimal to two's complement binary on 16 bits
+# ----------------------------------------------------------------------------------------------------------------------
+# Author: Guidotti Matteo
+# ----------------------------------------------------------------------------------------------------------------------
 
 # converts val (decimal signed) in its two's complement binary representation on 16 bits
 def signed_to_binary(val):
