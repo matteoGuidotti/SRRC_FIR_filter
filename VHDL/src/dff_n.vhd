@@ -2,7 +2,7 @@
 -- Parallel D Flip-Flop with generic number of bits for input/output (N)
 -- Synchronous reset
 ----------------------------------------------------------------------------------------------------------------------------
--- Author: Matteo Guidotti
+-- Author: Guidotti Matteo
 ----------------------------------------------------------------------------------------------------------------------------
 
 library IEEE;
@@ -22,7 +22,7 @@ end dff_n;
 -- Architecture description
 architecture dff_n_beh of dff_n is
 begin
-	proc: process(clk, rst)
+	proc: process(clk)
 	begin
 		if(rising_edge(clk)) then
 			if(rst = '0') then

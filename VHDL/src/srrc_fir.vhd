@@ -26,6 +26,21 @@ end srrc_fir;
 -- Architecture description
 architecture srrc_fir_beh of srrc_fir is
 
+	-- Definition of output lines of flip-flop
+	type dff_output_vector is array (0 to 21) of std_logic_vector(15 downto 0);
+	signal dff_out: dff_output_vector;
+
+	-- Definition of the sum output lines
+	type sum_output_vector is array (0 to 10) of std_logic_vector(16 downto 0); -- the sum between two values represented on 16 bits is representable with 17 bits
+	signal sum_out: sum_output_vector;
+
+	-- Definition of the multiplication output lines
+	type mul_out_vector is array (0 to 11) of std_logic_vector(32 downto 0); -- product between a value on 16 bits and a value on 17 bits is representable with 33 bits
+	signal mul_out: mul_out_vector;
+
+	-- Output of the last sum
+	signal result: std_logic_vector(32 downto 0);
+
 	-- Coefficients definition (thanks to simmetry I can store only half of them)
 	type coefficient is array (0 to 11) of signed (15 downto 0);
 	constant c: coefficient := (
@@ -42,21 +57,6 @@ architecture srrc_fir_beh of srrc_fir is
 		to_signed(15966, 16),	-- (0.9745)
 		to_signed(18622, 16)	-- (1.1366)
 	);
-
-	-- Definition of output lines of flip-flop
-	type dff_output_vector is array (0 to 21) of std_logic_vector(15 downto 0);
-	signal dff_out: dff_output_vector;
-
-	-- Definition of the sum output lines
-	type sum_output_vector is array (0 to 10) of std_logic_vector(16 downto 0); -- the sum between two values represented on 16 bits is representable with 17 bits
-	signal sum_out: sum_output_vector;
-
-	-- Definition of the multiplication output lines
-	type mul_out_vector is array (0 to 11) of std_logic_vector(32 downto 0); -- product between a value on 16 bits and a value on 17 bits is representable with 33 bits
-	signal mul_out: mul_out_vector;
-
-	-- Output of the last sum
-	signal result: std_logic_vector(32 downto 0);
 
 	-- Flip-Flop component declaration
 	component dff_n is
@@ -92,8 +92,8 @@ begin
 	-- Output Flip-Flop
 	OUTPUT_DFF_MAP: dff_n
 				generic map(N => 16)
-				port map(d => result(31 downto 16), clk => clk, rst => rst, q => y); 	-- truncation discarding 16 bits and saturation discarding the most significant bit
-				--port map(d => result(32 downto 17), clk => clk, rst => rst, q => y);	-- only truncation discarding 17 bits
+				port map(d => result(31 downto 16), clk => clk, rst => rst, q => y); 	-- truncation discarding 16 LS bits and saturation discarding the most significant bit
+				--port map(d => result(32 downto 17), clk => clk, rst => rst, q => y);	-- only truncation discarding 17 least significant bits
 
 	-- Summation stage: Sums between the couples of values that must be multiplied with the same coefficient
 	-- This consent to use half of the multiplier, that are expensive

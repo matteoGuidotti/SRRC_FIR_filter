@@ -70,6 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 3
+set_param synth.incrementalSynthesisCache C:/Users/matte/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-2220-DESKTOP-M1LA9CM/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -84,10 +89,10 @@ set_property ip_output_repo {c:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library work {
-  {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/dff_n.vhd}
-  {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir.vhd}
-  {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/srrc_fir_wrapper.vhd}
+read_vhdl -library xil_defaultlib {
+  {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/src/dff_n.vhd}
+  {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/src/srrc_fir.vhd}
+  {C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/VHDL/src/srrc_fir_wrapper.vhd}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

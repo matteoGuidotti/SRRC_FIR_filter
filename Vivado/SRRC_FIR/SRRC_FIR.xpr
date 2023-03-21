@@ -6,7 +6,7 @@
 <Project Version="7" Minor="61" Path="C:/Users/matte/Desktop/MAGISTRALE/I Anno/Electronic and Communication Systems/Electronic/Progetto/GitHub/SRRC_FIR_filter/Vivado/SRRC_FIR/SRRC_FIR.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="9b7988a06dbd41ba98118a2109004cda"/>
+    <Option Name="Id" Val="8e59589a8d84456295823e55f5c26b1e"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -88,23 +88,20 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../VHDL/dff_n.vhd">
+      <File Path="$PPRDIR/../../VHDL/src/dff_n.vhd">
         <FileInfo>
-          <Attr Name="Library" Val="work"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../VHDL/srrc_fir.vhd">
+      <File Path="$PPRDIR/../../VHDL/src/srrc_fir.vhd">
         <FileInfo>
-          <Attr Name="Library" Val="work"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../VHDL/srrc_fir_wrapper.vhd">
+      <File Path="$PPRDIR/../../VHDL/src/srrc_fir_wrapper.vhd">
         <FileInfo>
-          <Attr Name="Library" Val="work"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -133,6 +130,7 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="srrc_fir_wrapper"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>

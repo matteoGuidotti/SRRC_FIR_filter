@@ -27,7 +27,7 @@ architecture testbench of srrc_fir_tb is
 	end component;
 
 	-- constants
-	constant T_CLK		: time := 8 ns;
+	constant T_CLK		: time := 25 ns;	-- Clock period
 	constant TestLen 	: integer := 102;	-- Number of clock cycle before stopping the simulation
 
 	-- signals
@@ -49,7 +49,7 @@ begin
 				);
 	
 	-- the testbench signals change synchronously with the rising edge of the clock
-	testing_process: process(clk_tb, rst_tb)
+	testing_process: process(clk_tb)
 		variable clock_cycle : integer := 0; -- variable used to count the number of clock cycles after the reset
 	begin
 		if(rising_edge(clk_tb)) then
@@ -158,7 +158,6 @@ begin
 				when 101 => x_tb <= "1111111111111111";
 				when TestLen => stop_simulation <= '0';
 				when others => null;
-				-- when others => stop_simulation <= '0';
 			end case;
 			clock_cycle := clock_cycle + 1;
 		end if;
