@@ -20,7 +20,8 @@ def signal_generator(period, num_of_frequencies):
     freqs = np.linspace(0, period, num_of_frequencies)
     signal_values = np.sin(freqs)
     # plt.plot(freqs, signal_values)
-    # plt.title("NUMPY")
+    # plt.title("Input Signal")
+    # plt.grid()
     # plt.show()
     return signal_values
 

@@ -28,7 +28,7 @@ architecture testbench of srrc_fir_tb is
 
 	-- constants
 	constant T_CLK		: time := 25 ns;	-- Clock period
-	constant TestLen 	: integer := 102;	-- Number of clock cycle before stopping the simulation
+	constant TestLen 	: integer := 102;	-- Number of clock cycle in which the simulation is stopped
 
 	-- signals
 	signal clk_tb			: std_logic := '0';	-- clock signal (initialized to '0')
